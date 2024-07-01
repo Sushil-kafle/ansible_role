@@ -1,0 +1,9 @@
+---
+# tasks file for nginx
+
+- name: Install nginx
+  ansible.builtin.apt:
+    name: "{{ pkg }}"
+    state: present
+    update_cache: yes
+  notify: Restart nginx
